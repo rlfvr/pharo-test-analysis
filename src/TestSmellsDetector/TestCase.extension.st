@@ -1,7 +1,7 @@
 Extension { #name : 'TestCase' }
 
 { #category : '*TestSmellsDetector' }
-TestCase >> testSelectorSelector [
+TestCase >> selectorTestSelector [
 
 	^ testSelector
 ]

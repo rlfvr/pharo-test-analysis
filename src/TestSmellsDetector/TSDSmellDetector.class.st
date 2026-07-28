@@ -84,7 +84,7 @@ TSDSmellDetector >> resultsFrom: aTestCollection [
 
 	^ (aTestCollection collect: [ :aTestCase |
 			  self
-				  selector: aTestCase testSelectorSelector;
+				  selector: aTestCase selectorTestSelector;
 				  selfClass: aTestCase class;
 				  result ]) asSortedCollection 
 ]
