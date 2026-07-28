@@ -15,6 +15,7 @@ Class {
 { #category : 'private' }
 TSDAssertionLessDetector >> analyzeMethod [
 
+	self methodVisitor containsAssertMessageNode: false.
 	self methodVisitor analyzeMethod: self compiledMethod 
 ]
 
