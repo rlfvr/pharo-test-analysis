@@ -31,13 +31,6 @@ TSDAssertionLessDetector >> detects [
 ]
 
 { #category : 'testing' }
-TSDAssertionLessDetector >> hasNoAssertionSelectors [
-
-	^ self methodVisitor helperSelectors allSatisfy: [ :aHelperSelector | 
-				(self methodVisitor messages does: self compiledMethod includesMessage: aHelperSelector) not ]
-]
-
-{ #category : 'testing' }
 TSDAssertionLessDetector >> hasNohelpers [
 
 	^ (self methodVisitor helpers at: self compiledMethod) isEmpty 
@@ -47,7 +40,7 @@ TSDAssertionLessDetector >> hasNohelpers [
 TSDAssertionLessDetector >> isAssertionLess [
 
 	self analyzeMethod .
-	^ self hasNoAssertionSelectors and: [ self hasNohelpers ]
+	^ self methodVisitor containAssertMessagNode not 
 ]
 
 { #category : 'accessing' }
