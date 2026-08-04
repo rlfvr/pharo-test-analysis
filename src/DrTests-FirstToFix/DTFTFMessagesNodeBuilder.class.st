@@ -13,5 +13,5 @@ Class {
 DTFTFMessagesNodeBuilder >> buildNode: aTreeNode from: aMethodViewModel [
 
 	aTreeNode subResults do: [ :messageNode | 
-		messageNode browseMethod: aMethodViewModel compiledMethod ]
+		messageNode browseMethod: aMethodViewModel compiledMethod ] 
 ]
