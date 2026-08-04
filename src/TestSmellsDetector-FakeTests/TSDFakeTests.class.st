@@ -19,10 +19,22 @@ TSDFakeTests >> assert: aBlock description: aStringOrBlock [
 	^ super assert: true description: aStringOrBlock 
 ]
 
+{ #category : 'tests' }
+TSDFakeTests >> assignToX [
+
+	x := 1
+]
+
 { #category : 'running' }
 TSDFakeTests >> assignVariable [
 
 	assignedVariable := 'woah'
+]
+
+{ #category : 'tests' }
+TSDFakeTests >> noAssignToX [
+
+1
 ]
 
 { #category : 'running' }
@@ -75,6 +87,19 @@ TSDFakeTests >> testMultipleDetections [
 TSDFakeTests >> testOnlyAssigns [
 
 	x := 1.
+	self assert: 1 = 1
+]
+
+{ #category : 'tests' }
+TSDFakeTests >> testOnlyAssignsInChildMethod [
+
+	self assignToX.
+	self assert: 1 = 1
+]
+
+{ #category : 'tests' }
+TSDFakeTests >> testOnlyNoAssignsInChildMethod [
+	self noAssignToX.
 	self assert: 1 = 1
 ]
 

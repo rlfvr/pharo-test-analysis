@@ -25,8 +25,26 @@ TSDOverwrittenSetupDetectorTest >> testDetectsDifferentClasses [
 ]
 
 { #category : 'tests' }
+TSDOverwrittenSetupDetectorTest >> testDetectsNoOverWriteInChildMethod [
+
+
+	self detector selector: #testOnlyAssignsInChildMethod .
+
+	self assertCollection: self detector result overwrittenVariables hasSameElements: { #x } "nom mal choisit ou test artificiel"
+]
+
+{ #category : 'tests' }
 TSDOverwrittenSetupDetectorTest >> testDetectsOverWrite [
 1 halt.
 	self detector selector: #testOnlyAssigns.
+	self assertCollection: self detector result overwrittenVariables hasSameElements: { #x } "nom mal choisit ou test artificiel"
+]
+
+{ #category : 'tests' }
+TSDOverwrittenSetupDetectorTest >> testDetectsOverWriteInChildMethod [
+
+
+	self detector selector: #testOnlyAssignsInChildMethod .
+	1halt.
 	self assertCollection: self detector result overwrittenVariables hasSameElements: { #x } "nom mal choisit ou test artificiel"
 ]
