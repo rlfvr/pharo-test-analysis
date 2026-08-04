@@ -43,7 +43,6 @@ TSDOverwrittenSetupDetectorTest >> testDetectsOverWrite [
 { #category : 'tests' }
 TSDOverwrittenSetupDetectorTest >> testDetectsOverWriteInChildMethod [
 
-
 	self detector selector: #testOnlyAssignsInChildMethod .
 	1halt.
 	self assertCollection: self detector result overwrittenVariables hasSameElements: { #x } "nom mal choisit ou test artificiel"
