@@ -47,6 +47,12 @@ TSDFakeTests >> setUp [
 ]
 
 { #category : 'tests' }
+TSDFakeTests >> testCallTest [
+
+	self testUsesClasses 
+]
+
+{ #category : 'tests' }
 TSDFakeTests >> testConnectedToAssertion [
 
 	self testConnectedToAssignation 
@@ -81,6 +87,14 @@ TSDFakeTests >> testMultipleDetections [
 	self
 		deny: (self detector detectSelector: #testUsesInstanceVar);
 		assert: (self detector detectSelector: #testUsesLocalVariables)
+]
+
+{ #category : 'tests' }
+TSDFakeTests >> testNoCallTest [
+
+	| var |
+	var := TSDUnusualOrderTestDetector.
+	var testMethode 
 ]
 
 { #category : 'tests' }

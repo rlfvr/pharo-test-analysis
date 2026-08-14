@@ -35,9 +35,12 @@ DTTSDResult >> buildTreeForUI [
 			  (self buildTreeForUIManyClassReferences
 				   name: 'Tests references classes too many times';
 				   yourself).
-				(self buildTreeForUIGuarded
+			  (self buildTreeForUIGuarded
 				   name: 'Tests guarded';
-				   yourself) }
+				   yourself).
+			  (self buildTreeForUIUnusalOrder
+				   name: 'Tests calls other test';
+				   yourself)}
 ]
 
 { #category : 'accessing' }
@@ -69,7 +72,15 @@ DTTSDResult >> buildTreeForUIOverwrittenSetup [
 ]
 
 { #category : 'accessing' }
+DTTSDResult >> buildTreeForUIUnusalOrder [ 
+
+	<dtTestTSDResultTreeNamed: 'Tests uses other tests' order: 7>
+	^ self buildTreeFrom: self detectedTests unusualOrderTests 
+]
+
+{ #category : 'accessing' }
 DTTSDResult >> buildTreeForUIUselessSetup [ 
+
 
 	<dtTestTSDResultTreeNamed: 'Tests not fully using their set up' order: 4>
 	^ self buildTreeFrom: self detectedTests uselessSetupTests 

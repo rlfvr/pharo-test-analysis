@@ -35,6 +35,12 @@ TSDUselessSetupResult >> doesUseSetupVariables: anObject [
 ]
 
 { #category : 'accessing' }
+TSDUselessSetupResult >> testMethode [
+
+	^ self
+]
+
+{ #category : 'accessing' }
 TSDUselessSetupResult >> usedSetupVariables [
 
 	^ usedSetupVariables

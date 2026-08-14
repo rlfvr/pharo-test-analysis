@@ -30,6 +30,17 @@ TSDSubFakeTests >> testAssignsSomeInstanceVar [
 ]
 
 { #category : 'tests' }
+TSDSubFakeTests >> testCallTest2 [
+
+	| var |
+	super testCallTest.
+	self testOnlyAssigns.
+	var := TSDUnusualOrderTestDetector.
+	var testMethode 
+	 
+]
+
+{ #category : 'tests' }
 TSDSubFakeTests >> testConnectedToAssignation [
 
 	super testConnectedToAssignation.

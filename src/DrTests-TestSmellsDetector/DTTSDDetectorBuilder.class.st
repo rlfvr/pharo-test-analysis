@@ -28,8 +28,10 @@ DTTSDDetectorBuilder class >> assertionless [
 { #category : 'visiting' }
 DTTSDDetectorBuilder class >> classReferences [
 
-	^ self detector: TSDTooManyClassesDetector new setDataBlock: [ :aTestData :tests | 
-		aTestData manyClassReferencesTests: (tests select: #doesReferenceManyClasses ) ]
+	^ self 
+		detector: TSDTooManyClassesDetector new 
+			setDataBlock: [ :aTestData :tests | 
+				aTestData manyClassReferencesTests: (tests select: #doesReferenceManyClasses ) ]
 ]
 
 { #category : 'instance creation' }
@@ -61,6 +63,18 @@ DTTSDDetectorBuilder class >> overwrittenSetup [
 
 	^ self detector: detector setDataBlock: [ :aTestData :tests | 
 		aTestData overwrittenSetupTests: (tests select: #doesOverwritesSetup ) ]
+]
+
+{ #category : 'accessing' }
+DTTSDDetectorBuilder class >> unusualOrderTests [
+
+
+	^ self
+		  detector: (TSDUnusualOrderTestDetector new
+				   methodVisitor: SimpleUnusualOrderTestVisitor new ;
+				   yourself)
+		  setDataBlock: [ :aTestData :tests | 
+			aTestData unusualOrderTests: (tests select: #hasUnusualOrderTest ) ]
 ]
 
 { #category : 'accessing' }

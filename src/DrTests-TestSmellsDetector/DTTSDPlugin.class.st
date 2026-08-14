@@ -41,7 +41,8 @@ DTTSDPlugin >> builder [
 			  DTTSDDetectorBuilder overwrittenSetup.
 			  DTTSDDetectorBuilder classReferences.
 			  DTTSDDetectorBuilder uselessSetup.
-			  DTTSDDetectorBuilder guarded }
+			  DTTSDDetectorBuilder guarded.
+			  DTTSDDetectorBuilder unusualOrderTests }
 ]
 
 { #category : 'accessing' }

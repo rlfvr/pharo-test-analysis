@@ -9,7 +9,8 @@ Class {
 		'overwrittenSetupTests',
 		'manyClassReferencesTests',
 		'uselessSetupTests',
-		'guardedTests'
+		'guardedTests',
+		'unusualOrderTests'
 	],
 	#category : 'DrTests-TestSmellsDetector-Presenters',
 	#package : 'DrTests-TestSmellsDetector',
@@ -62,6 +63,18 @@ DTTSDDetectedTests >> overwrittenSetupTests [
 DTTSDDetectedTests >> overwrittenSetupTests: anObject [
 
 	overwrittenSetupTests := anObject
+]
+
+{ #category : 'accessing' }
+DTTSDDetectedTests >> unusualOrderTests [
+
+	^ unusualOrderTests
+]
+
+{ #category : 'accessing' }
+DTTSDDetectedTests >> unusualOrderTests: anObject [
+
+	unusualOrderTests := anObject
 ]
 
 { #category : 'accessing' }
